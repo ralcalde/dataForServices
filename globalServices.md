@@ -6,8 +6,8 @@
     * [/users/{userId}-GET](#/users/{userId}-GET))
     
 * [documents-v1](#documents-v1)
-    * [DELETE-documents](#DELETE-documents)
-    * [/documents/{documentId}-POST](#/documents/{documentId}-POST)
+    * [delete-documents](#delete-documents)
+    * [/documents/{documentId}-POST](#/documents/{documentId}-post)
     * [/documents/{documentId}-GET](#/documents/{documentId}-GET)
 
 ---------------
@@ -49,7 +49,7 @@ image.url | Optional | -| - | - |
 
 ## documents-v1
 
-### DELETE-documents
+### delete-documents
 
 * URI PARAMETERS: documentId
 
@@ -64,7 +64,7 @@ Field | Required | Colombia | Chile | Mexico |
 -----------------|-----------------|-----------------|-----------------|-----------------|
 documentId | Required | - | - | - |
 
-### /documents/{documentId}-POST
+### /documents/{documentId}-post
 
 ### /documents/{documentId}-GET
 
