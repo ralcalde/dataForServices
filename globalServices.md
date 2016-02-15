@@ -22,10 +22,10 @@
 
 * [devices-v1](#devices-v1)
     * [get-devices](#get-devices)
-    * [delete-deviceId](#delete-deviceId)
-    * [patch-deviceId](#patch-deviceId)
-    * [put-deviceId](#put-deviceId)
-    * [get-deviceId](#get-deviceId)
+    * [delete-deviceid](#delete-deviceid)
+    * [patch-deviceid](#patch-deviceid)
+    * [put-deviceid](#put-deviceid)
+    * [get-deviceid](#get-deviceid)
 
 ---------------
 ## users-V1
@@ -482,7 +482,7 @@ deviceId	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 token	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 alias	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 
-### delete-deviceId
+### delete-deviceid
 
 Method: __DELETE__
 URI: __/devices/{deviceId}__ 
@@ -493,7 +493,7 @@ Field | Required | Colombia | Chile | Mexico |
 -----------------|-----------------|-----------------|-----------------|-----------------|
 deviceId | Required | - | - | - |
 
-### patch-deviceId
+### patch-deviceid
 
 Method: __PATCH__
 URI: __/devices/{deviceId}__ 
@@ -518,7 +518,7 @@ deviceId	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 token	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 alias	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 
-### put-deviceId
+### put-deviceid
 
 Method: __PUT__
 URI: __/devices/{deviceId}__ 
@@ -541,7 +541,7 @@ Field | Required | Colombia | Chile | Mexico |
 -----------------|-----------------|-----------------|-----------------|-----------------|
 deviceId	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 
-### get-deviceId
+### get-deviceid
 
 Method: __GET__
 URI: __/devices/{deviceId}__ 
