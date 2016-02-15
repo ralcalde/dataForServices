@@ -20,6 +20,12 @@
     * [get-transactions-fees](#get-transactions-fees)
     * [get-transactions-commerce](#get-transactions-commerce)
 
+* [devices-v1](#devices-v1)
+    * [get-devices](#get-devices)
+    * [delete-deviceId](#delete-deviceId)
+    * [patch-deviceId](#patch-deviceId)
+    * [put-deviceId](#put-deviceId)
+    * [get-deviceId](#get-deviceId)
 ---------------
 ## users-V1
 
@@ -459,4 +465,97 @@ geolocalization.latitude	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 geolocalization.longitude	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 
 ---------------
+
+## devices-v1
+
+### get-devices
+
+Method: __GET__
+URI: __/devices__ 
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+deviceId	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+token	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+alias	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+
+### delete-deviceId
+
+Method: __DELETE__
+URI: __/devices/{deviceId}__ 
+
+* URI PARAMETERS:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+deviceId | Required | - | - | - |
+
+### patch-deviceId
+
+Method: __PATCH__
+URI: __/devices/{deviceId}__ 
+
+* URI PARAMETERS:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+deviceId | Required | - | - | - |
+
+* BODY :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+alias | Required | - | - | - |
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+deviceId	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+token	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+alias	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+
+### put-deviceId
+
+Method: __PUT__
+URI: __/devices/{deviceId}__ 
+
+* URI PARAMETERS:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+deviceId | Required | - | - | - |
+
+* BODY :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+token | Required | - | - | - |
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+deviceId	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+
+### get-deviceId
+
+Method: __GET__
+URI: __/devices/{deviceId}__ 
+
+* URI PARAMETERS:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+deviceId | Required | - | - | - |
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+deviceId	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+token	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+alias	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 
