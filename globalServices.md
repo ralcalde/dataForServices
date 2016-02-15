@@ -3,17 +3,21 @@
 ## Index
 
 * [users-V1](#users-V1)
-    * [/users/{userId}-GET](#/users/{userId}-GET))
+    * [get-users](#get-users)
     
 * [documents-v1](#documents-v1)
     * [delete-documents](#delete-documents)
-    * [/documents/{documentId}-post](#/documents/{documentId}-post)
-    * [/documents/{documentId}-GET](#/documents/{documentId}-GET)
+    * [post-documents](#post-documents)
+    * [get-documents](#get-documents)
 
 ---------------
 ## users-V1
 
-### /users/{userId}-GET
+### get-users
+
+Method: __GET__
+URI: __/users/{userId}__ 
+
 
 * URI PARAMETERS: userIdrequired
 
@@ -51,6 +55,10 @@ image.url | Optional | -| - | - |
 
 ### delete-documents
 
+Method: __DELETE__
+URI: __/documents/{documentId}__ 
+
+
 * URI PARAMETERS: documentId
 
 Field | Required | Colombia | Chile | Mexico |
@@ -64,8 +72,14 @@ Field | Required | Colombia | Chile | Mexico |
 -----------------|-----------------|-----------------|-----------------|-----------------|
 documentId | Required | - | - | - |
 
-### /documents/{documentId}-post
+### post-documents
 
-### /documents/{documentId}-GET
+Method: __POST__
+URI: __/documents/{documentId}__ 
+
+### get-documents
+
+Method: __GET__
+URI: __/documents/{documentId}__ 
 
 
