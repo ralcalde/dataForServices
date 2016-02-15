@@ -72,14 +72,63 @@ Field | Required | Colombia | Chile | Mexico |
 -----------------|-----------------|-----------------|-----------------|-----------------|
 documentId | Required | - | - | - |
 
+
 ### post-documents
 
 Method: __POST__
 URI: __/documents/{documentId}__ 
+
+
+* URI PARAMETERS: documentId
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+documentId | Required | - | - | - |
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+documentId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+file	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+file.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+file.size	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+file.documentFamily	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+file.creationDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+file.path	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+file.fileManager	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+taxonomy	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+taxonomy.type	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+taxonomy.metadata	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+taxonomy.metadata.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+taxonomy.metadata.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+user	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+branch	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+branch.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+branch.bank	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+origin	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+origin.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+origin.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+comments	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
 
 ### get-documents
 
 Method: __GET__
 URI: __/documents/{documentId}__ 
 
+* URI PARAMETERS: documentId
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+documentId | Required | - | - | - |
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+file	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 
