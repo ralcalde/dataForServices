@@ -128,7 +128,7 @@ comments	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 Method: __GET__
 URI: __/documents/{documentId}__ 
 
-* URI PARAMETERS: documentId
+* URI PARAMETERS:
 
 Field | Required | Colombia | Chile | Mexico |
 -----------------|-----------------|-----------------|-----------------|-----------------|
@@ -149,7 +149,7 @@ file	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 Method: __GET__
 URI: __/transactions__ 
 
-* QUERY PARAMETERS: documentId
+* QUERY PARAMETERS:
 
 Field | Required | Colombia | Chile | Mexico |
 -----------------|-----------------|-----------------|-----------------|-----------------|
@@ -262,16 +262,201 @@ commentsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 
 ### get-transactions-balances
 
+Method: __GET__
+URI: __/transactions/balances__ 
+
+* QUERY PARAMETERS:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+fromDate | Optional | - | - | - |
+toDate | Optional | - | - | - |
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+differentialBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+differentialBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+differentialBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+purchasingVariation	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+purchasingVariation.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+purchasingVariation.unit	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+balanceSheet	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+balanceSheet.month	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+balanceSheet.year	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+balanceSheet.incomes	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+balanceSheet.incomes.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+balanceSheet.incomes.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+balanceSheet.expenses	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+balanceSheet.expenses.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+balanceSheet.expenses.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+balanceSheet.differentialBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+balanceSheet.differentialBalance.amount	 | 	Optional???	 | 	-	 | 	-	 | 	-	 | 
+balanceSheet.differentialBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+
 ### get-transactions-tags
+
+Method: __GET__
+URI: __/transactions/tags__ 
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+tagsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+tags	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 
 ### get-transactions-id
 
+Method: __GET__
+URI: __/transactions/{transactionId}__ 
+
+* URI PARAMETERS:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+transactionId | Required | - | - | - |
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+transactionId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+product	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+product.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+product.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+amount.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+amount.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAmount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAmount.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAmount.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+postedDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+type	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+type.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+type.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+moneyFlow	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+moneyFlow.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+moneyFlow.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currencies	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currencies.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currencies.isMajor	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+postedBalance	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+postedBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+postedBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesAvailableBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesAvailableBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesAvailableBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesPostedBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesPostedBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesPostedBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+tags	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+attachmentsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+commentsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+
 ### get-transactions-comments
+
+Method: __GET__
+URI: __/transactions/{transactionId}/comments__ 
+
+* URI PARAMETERS:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+transactionId | Required | - | - | - |
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+commentsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+comments	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+comments.commentId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+comments.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+comments.lastUpdate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+comments.private	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 
 ### get-transactions-attachments
 
+Method: __GET__
+URI: __/transactions/{transactionId}/attachments__ 
+
+* URI PARAMETERS:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+transactionId | Required | - | - | - |
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+attachmentsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+attachments	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+attachments.attachmentId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+attachments.url	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+attachments.filename	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+attachments.filedata	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+attachments.mimetype	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+attachments.size	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+attachments.lastUpdate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+attachments.private	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
 ### get-transactions-fees
+
+Method: __GET__
+URI: __/transactions/{transactionId}/fees__ 
+
+* URI PARAMETERS:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+transactionId | Required | - | - | - |
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+feesCount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+fees	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+fees.feeId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+fees.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+fees.balance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+fees.balance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+fees.balance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
 
 ### get-transactions-commerce
 
+Method: __GET__
+URI: __/transactions/{transactionId}/commerce__ 
+
+* URI PARAMETERS:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+transactionId | Required | - | - | - |
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+commerceId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+geolocalization	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+geolocalization.latitude	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+geolocalization.longitude	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+---------------
 
