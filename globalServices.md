@@ -27,6 +27,14 @@
     * [put-deviceid](#put-deviceid)
     * [get-deviceid](#get-deviceid)
 
+* [notifications-v1](#notifications-v1)
+    * [put-notifications](#put-notifications)
+    * [get-notifications](#get-notifications)
+    * [get-notifications-configuration](#get-notifications-configuration)
+    * [post-notifications-configuration](#post-notifications-configuration)
+    * [get-notifications-count](#get-notifications-count)
+
+
 ---------------
 ## users-V1
 
@@ -101,6 +109,9 @@ URI: __/documents/{documentId}__
 Field | Required | Colombia | Chile | Mexico |
 -----------------|-----------------|-----------------|-----------------|-----------------|
 documentId | Required | - | - | - |
+
+
+* BODY :
 
 Field | Required | Colombia | Chile | Mexico |
 -----------------|-----------------|-----------------|-----------------|-----------------|
@@ -560,3 +571,75 @@ deviceId	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 token	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 alias	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 
+
+---------------
+## notifications-v1
+
+### put-notifications
+
+Method: __PUT__
+URI: __/notifications__ 
+
+* BODY :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+notifications | Required | - | - | - |
+notifications.notificationId | Required | - | - | - |
+notifications.isUnread | Required | - | - | - |
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+notificationId	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+
+
+### get-notifications
+
+Method: __GET__
+URI: __/notifications__ 
+
+* QUERY PARAMETERS:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+platform | Optional | - | - | - |
+priority | Optional | - | - | - |
+product | Optional | - | - | - |
+type | Optional | - | - | - |
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+notificationsNew	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notificationsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.notificationId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.product	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.product.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.product.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.notificationType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.notificationType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.notificationType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.platform	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.platform.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.platform.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.creationDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.modificationDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+notifications.isUnread	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.description	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.parameters	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+notifications.parameters.key	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+notifications.parameters.value	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+notifications.parameters.parameter	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+notifications.parameters.parameter.key	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+notifications.parameters.parameter.value	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+notifications.priority	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+notifications.priority.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+notifications.priority.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+
+### get-notifications-configuration
+### post-notifications-configuration
+### get-notifications-count
