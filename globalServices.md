@@ -26,6 +26,7 @@
     * [patch-deviceId](#patch-deviceId)
     * [put-deviceId](#put-deviceId)
     * [get-deviceId](#get-deviceId)
+
 ---------------
 ## users-V1
 
