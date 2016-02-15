@@ -6,7 +6,7 @@
     * [/users/{userId}-GET](#/users/{userId}-GET))
     
 * [documents-v1](#documents-v1)
-    * [/documents/{documentId}-DELETE](#/documents/{documentId}-DELETE)
+    * [/documents/{documentId}-DELETE](#DELETE-documents)
     * [/documents/{documentId}-POST](#/documents/{documentId}-POST)
     * [/documents/{documentId}-GET](#/documents/{documentId}-GET)
 
@@ -49,7 +49,7 @@ image.url | Optional | -| - | - |
 
 ## documents-v1
 
-### /documents/{documentId}-DELETE
+### DELETE-documents
 
 * URI PARAMETERS: documentId
 
