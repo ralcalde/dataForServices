@@ -7,7 +7,7 @@
     
 * [documents-v1](#documents-v1)
     * [delete-documents](#delete-documents)
-    * [/documents/{documentId}-POST](#/documents/{documentId}-post)
+    * [/documents/{documentId}-post](#/documents/{documentId}-post)
     * [/documents/{documentId}-GET](#/documents/{documentId}-GET)
 
 ---------------
