@@ -51,6 +51,20 @@
     * [post-wire_transfers-schedules](#post-wire_transfers-schedules)
     * [get-wire_transfers-schedules](#get-wire_transfers-schedules)
 
+* [accounts-v1](#accounts-v1)
+    * [get-accounts](#get-accounts)
+    * [get-accounts-balances](#get-accounts-balances)
+    * [patch-accounts_id](#patch-accounts_id)
+    * [get-accounts_id](#get-accounts_id)   
+    * [get-accounts_id-holds](#get-accounts_id-holds)
+    * [post-accounts_id-blocks](#post-accounts_id-blocks)
+    * [get-accounts_id-blocks](#get-accounts_id-blocks)
+    * [post-accounts_id-participants](#post-accounts_id-participants)
+    * [get-accounts_id-participants](#get-accounts_id-participants)
+    * [post-accounts_id-checkbooks](#post-accounts_id-checkbooks)
+    * [get-accounts_id-checkbooks](#get-accounts_id-checkbooks)
+    * [get-accounts_id-transactions](#get-accounts_id-transactions)
+
 ---------------
 ## users-V1
 
@@ -1248,5 +1262,449 @@ periodicity.id	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 periodicity.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 creationDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 modificationDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
-active	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
- 
+active	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+
+---------------
+
+## accounts-v1 
+
+### get-accounts
+
+Method: __GET__
+URI: __/accounts__ 
+
+* QUERY PARAMETERS :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+Order	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+Order by	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+accountId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+numberType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+numberType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+accountType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+accountType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+accountType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+title	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+title.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+title.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+alias	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+availableBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+postedBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+postedBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+postedBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+image	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+image.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+image.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+image.url	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+### get-accounts-balances
+
+Method: __GET__
+URI: __/accounts/balances__ 
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+aggregateAvailableBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+aggregateAvailableBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+aggregateAvailableBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+aggregatePostedBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+aggregatePostedBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+aggregatePostedBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+### patch-accounts_id
+
+Method: __PATCH__
+URI: __/accounts/{accountId}__ 
+
+* URI PARAMETERS :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+accountId	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+
+* BODY :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+alias	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+accountId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+alias	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+### get-accounts_id
+
+Method: __GET__
+URI: __/accounts/{accountId}__ 
+
+* URI PARAMETERS :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+accountId	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+accountId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+numberType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+numberType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+formats	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+formats.number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+formats.numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+formats.numberType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+formats.numberType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+accountType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+accountType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+accountType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+title	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+title.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+title.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+bank	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+bank.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+bank.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+alias	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+address	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+address.streetAddress	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+address.city	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+address.region	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+address.country	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+address.zipCode	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+address.alias	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+openingDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+image	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+image.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+image.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+image.url	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.relatedContractId	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.number	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.product	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.product.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.product.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.relationType	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.relationType.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.relationType.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+currencies	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currencies.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currencies.isMajor	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+postedBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+postedBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+postedBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesAvailableBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesAvailableBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesAvailableBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesPostedBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesPostedBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesPostedBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+
+### get-accounts_id-holds
+
+Method: __GET__
+URI: __/accounts/{accountId}/holds__ 
+
+* URI PARAMETERS :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+accountId	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+holdId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+postedBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+postedBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+postedBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+initialDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+endDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+transactionDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+origin	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+origin.application	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+origin.application.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+origin.application.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+origin.branch	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+origin.branch.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+origin.branch.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+origin.branch.address	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+origin.branch.address.streetAddress	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+origin.branch.address.city	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+origin.branch.address.region	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+origin.branch.address.country	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+origin.branch.address.zipCode	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+origin.branch.address.alias	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+origin.user	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+origin.notify	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+
+### post-accounts_id-blocks
+
+Method: __POST__
+URI: __/accounts/{accountId}/blocks__ 
+
+* URI PARAMETERS :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+accountId	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+
+* BODY :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+block	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+blockId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+name	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+blockDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+### get-accounts_id-blocks
+
+Method: __GET__
+URI: __/accounts/{accountId}/blocks__ 
+
+* URI PARAMETERS :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+accountId	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+blockId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+name	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+blockDate	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+
+### post-accounts_id-participants
+
+Method: __POST__
+URI: __/accounts/{accountId}/participants__ 
+
+* URI PARAMETERS :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+accountId	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+
+* BODY :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+participants	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+participants.firstName | 	Required	 | 	-	 | 	-	 | 	-	 | 
+participants	.lastName| 	Required	 | 	-	 | 	-	 | 	-	 | 
+participants	.relationship | 	Required	 | 	-	 | 	-	 | 	-	 | 
+participants.relationship.id | 	Required	 | 	-	 | 	-	 | 	-	 | 
+participants.relationship.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+* STATUS 201 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+participantId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+### get-accounts_id-participants
+
+Method: __GET__
+URI: __/accounts/{accountId}/participants__ 
+
+* URI PARAMETERS :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+accountId	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+participantId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+firstName	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+lastName	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+relationship	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+relationship.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+relationship.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+### post-accounts_id-checkbooks
+
+Method: __POST__
+URI: __/accounts/{accountId}/checkbooks__ 
+
+* URI PARAMETERS :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+accountId	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+
+* BODY :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+checks	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+checks.checkId | 	Required	 | 	-	 | 	-	 | 	-	 | 
+checkbookId| 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+* STATUS 201 OR 202 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+checks	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+checks.checkId | 	Required	 | 	-	 | 	-	 | 	-	 | 
+checkbookId| 	Required	 | 	-	 | 	-	 | 	-	 |
+
+### get-accounts_id-checkbooks
+
+Method: __GET__
+URI: __/accounts/{accountId}/checkbooks__ 
+
+* URI PARAMETERS :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+accountId	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+accountId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+numberType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+numberType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+checkbooks	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+checkbooks.checkbookId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+checkbooks.checkbookType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+checkbooks.type.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+checkbooks.type.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+checkbooks.format	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+checkbooks.format.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+checkbooks.format.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+checkbooks.requestDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+checkbooks.deliveryDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+checkbooks.status	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+checkbooks.status.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+checkbooks.status.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+checkbooks.firstCheckId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+checkbooks.lastCheckId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+### get-accounts_id-transactions
+
+Method: __GET__
+URI: __/accounts/{accountId}/transactions__ 
+
+* URI PARAMETERS :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+accountId	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
+
+* QUERY PARAMETERS :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+financingType	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fromAmount	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
+fromDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+moneyFlow	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+order	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+orderBy	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+tag	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+text	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+toAmount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+toDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+transactionId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+relatedContract	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+relatedContract.relatedContractId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+relatedContract.product	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+relatedContract.product.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+relatedContract.product.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+relatedContract.number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+amount.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+amount.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+postedDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+concept	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+concept.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+concept.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+concept.image	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+concept.image.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+concept.image.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+concept.image.url	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+moneyFlow	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+moneyFlow.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+moneyFlow.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+checkNumber	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+availableBalance	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+postedBalance	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+postedBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+postedBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+relatedBill	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedBill.billId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+activitySector	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+activitySector.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+activitySector.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+activitySector.image	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+activitySector.image.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+activitySector.image.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+activitySector.image.url	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+tags	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+attachmentsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+commentsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+---------------
+## security-v1
