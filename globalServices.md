@@ -51,13 +51,6 @@
     * [post-wire_transfers-schedules](#post-wire_transfers-schedules)
     * [get-wire_transfers-schedules](#get-wire_transfers-schedules)
 
-
-## wireTransfers-v1
-
-### post-wireTransfers
-
-### get-wireTransfers
-
 ---------------
 ## users-V1
 
