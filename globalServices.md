@@ -34,6 +34,29 @@
     * [get-notifications-configuration](#get-notifications-configuration)   
     * [get-notifications-count](#get-notifications-count)
 
+* [products-v1](#products-v1)
+    * [get-products](#get-products)
+
+* [wire_transfers-v1](#wire_transfers-v1)
+    * [post-wire_transfers](#post-wire_transfers)
+    * [get-wire_transfers](#get-wire_transfers)
+    * [delete-wire_transfers_id](#delete-wire_transfers_id)
+    * [get-wire_transfers_id](#get-wire_transfers_id)    
+    * [get-wire_transfers_id-limits](#get-wire_transfers_id-limits)
+    * [delete-wire_transfers-destination_accounts](#delete-wire_transfers-destination_accounts)
+    * [post-wire_transfers-destination_accounts](#post-wire_transfers-destination_accounts)
+    * [get-wire_transfers-destination_accounts](#get-wire_transfers-destination_accounts)
+    * [delete-wire_transfers-schedules](#delete-wire_transfers-schedules)
+    * [put-wire_transfers-schedules](#put-wire_transfers-schedules)
+    * [post-wire_transfers-schedules](#post-wire_transfers-schedules)
+    * [get-wire_transfers-schedules](#get-wire_transfers-schedules)
+
+
+## wireTransfers-v1
+
+### post-wireTransfers
+
+### get-wireTransfers
 
 ---------------
 ## users-V1
@@ -723,3 +746,514 @@ notificationsNew	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 notificationsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 notificationsUnread	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 
+---------------
+
+## products-v1
+
+### get-products
+
+Method: __GET__
+URI: __/products__
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+consumers	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+consumers.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+consumers.productsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+products	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+products.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+products.product	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+products.product.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+products.product.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+products.type	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+products.type.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+products.type.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+products.title	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+products.title.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+products.title.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+products.description	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+products.consumers	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+products.consumers.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+products.consumers.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+---------------
+
+## wire_transfers-v1
+
+### post-wire_transfers
+
+Method: __POST__
+URI: __/wireTransfers__ 
+
+* BODY :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+originAccount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAccount.accountId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.accountType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.bank	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+sentMoney	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+sentMoney.amount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+sentMoney.currency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+receivedMoney	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+receivedMoney.amount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+receivedMoney.currency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees.balance	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees.balance.amount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees.balance.currency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees.isNegotiated	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+charges	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+transferee.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument.number	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument.documentType	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+scopeType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+urgentTransfer	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+notifications.contactInformation	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+notifications.platform	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+isSimulated	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+
+* STATUS 201 or 202 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+wireTransferId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+approxReceptionTransferDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+fees	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees.balance	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees.balance.amount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees.balance.currency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees.isNegotiated	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+
+
+### get-wire_transfers
+
+
+Method: __GET__
+URI: __/wireTransfers__ 
+
+* QUERY PARAMETERS :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+destinationAccountNumber	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
+destinationAccountNumberFormat	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fromAmount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fromCurrency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fromDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+originAccount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+scopeTypeTransfer	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
+state	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+toAmount	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
+toCurrency | 	Optional	 | 	-	 | 	-	 | 	-	 |
+toDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
+
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+wireTransferId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAccount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAccount.accountId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAccount.number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAccount.numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAccount.numberType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAccount.numberType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.numberType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.numberType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.accountType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.accountType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.accountType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.bank	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.bank.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.bank.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+sentMoney	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+sentMoney.amount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+sentMoney.currency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+sentMoney.isMajor	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+receivedMoney	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+receivedMoney.amount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+receivedMoney.currency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees.balance	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees.balance.amount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees.balance.currency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees.isNegotiated	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+charges	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+charges.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+charges.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+transferee.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument.number	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument.documentType	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument.documentType.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument.documentType.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+date	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+scopeType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+scopeType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+scopeType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+urgentTransfer	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+cancellationInterval	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+cancellationInterval.value	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+cancellationInterval.period	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+cancellationInterval.period.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+cancellationInterval.period.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+ 
+
+### delete-wire_transfers_id
+
+Method: __DELETE__
+URI: __/wireTransfers/{wireTransferId}__ 
+
+* URI PARAMETERS :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+wireTransferId	 | 	required	 | 	-	 | 	-	 | 	-	 |
+
+### get-wire_transfers_id
+
+Method: __GET__
+URI: __/wireTransfers/{wireTransferId}__ 
+
+* URI PARAMETERS :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+wireTransferId	 | 	required	 | 	-	 | 	-	 | 	-	 |
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+wireTransferId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAccount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAccount.accountId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAccount.number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAccount.numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAccount.numberType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAccount.numberType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.numberType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.numberType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.accountType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.accountType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.accountType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.bank	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.bank.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.bank.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+sentMoney	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+sentMoney.amount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+sentMoney.currency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+sentMoney.isMajor	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+receivedMoney	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+receivedMoney.amount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+receivedMoney.currency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees.balance	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees.balance.amount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees.balance.currency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fees.isNegotiated	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+charges	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+charges.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+charges.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+transferee.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument.number	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument.documentType	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument.documentType.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument.documentType.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+date	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+scopeType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+scopeType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+scopeType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+urgentTransfer	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+cancellationInterval	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+cancellationInterval.value	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+cancellationInterval.period	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+cancellationInterval.period.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+cancellationInterval.period.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+
+
+### get-wire_transfers_id-limits
+
+Method: __GET__
+URI: __/wireTransfers/{wireTransferId}/limits__ 
+
+* URI PARAMETERS :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+wireTransferId	 | 	required	 | 	-	 | 	-	 | 	-	 |
+
+* QUERY PARAMETERS :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+name	 | 	optional	 | 	-	 | 	-	 | 	-	 |
+
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+limitId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+amount.value	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+amount.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+### delete-wire_transfers-destination_accounts
+
+Method: __DELETE__
+URI: __/wireTransfers/destinationAccounts__ 
+
+* BODY :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+originAccountId	 | 	required	 | 	-	 | 	-	 | 	-	 |
+
+### post-wire_transfers-destination_accounts
+
+Method: __POST__
+URI: __/wireTransfers/destinationAccounts__ 
+
+* BODY :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+alias	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+isFavourite	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+
+
+* STATUS 201 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+destinationAccountId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+### get-wire_transfers-destination_accounts
+
+Method: __GET__
+URI: __/wireTransfers/destinationAccounts__ 
+
+* QUERY PARAMETERS :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+number	 | 	optional	 | 	-	 | 	-	 | 	-	 |
+
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+originAccountId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+alias	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+numberType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+numberType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+### delete-wire_transfers-schedules
+
+Method: __DELETE__
+URI: __/wireTransfers/schedules__ 
+
+* BODY :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+scheduleId	 | 	required	 | 	-	 | 	-	 | 	-	 |
+
+### put-wire_transfers-schedules
+
+Method: __PUT__
+URI: __/wireTransfers/schedules__ 
+
+* BODY :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+scheduleId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+sentMoney	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+sentMoney.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+sentMoney.isMajor	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+receivedMoney	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+receivedMoney.amount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+receivedMoney.currency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+transferee.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument.number	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument.documentType	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+scopeType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+fromDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+toDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+iterations	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+periodicity	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+active	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+scheduleId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+### post-wire_transfers-schedules
+
+Method: __POST__
+URI: __/wireTransfers/schedules__ 
+
+* BODY :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+originAccount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAccount.accountId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+schedules.destinationAccount.accountType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.bank	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+sentMoney	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+sentMoney.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+sentMoney.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+receivedMoney	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+receivedMoney.amount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+receivedMoney.currency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+transferee.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument.number	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument.documentType	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+scopeType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+toDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+iterations	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+periodicity	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+active	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+
+* STATUS 201 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+scheduleId	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+ 
+
+### get-wire_transfers-schedules
+
+Method: __GET__
+URI: __/wireTransfers/schedules__ 
+
+* QUERY PARAMETERS :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+active	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+concept	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+destinationAccountNumber	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+destinationAccountNumberFormat	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fromAmount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fromCurrency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fromDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+originAccount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+scopeTypeTransfer	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+toAmount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+toCurrency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+toDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+scheduleId	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+originAccount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAccount.accountId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAccount.number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAccount.alias	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+originAccount.numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAccount.numberType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAccount.numberType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.numberType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.numberType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.bank	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.bank.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.bank.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.accountType	 | 	Type of account.	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.accountType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.accountType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+sentMoney	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+sentMoney.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+sentMoney.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+sentMoney.isMajor	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+receivedMoney	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+receivedMoney.amount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+receivedMoney.currency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+transferee.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument.number	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument.documentType	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument.documentType.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+transferee.identityDocument.documentType.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+scopeType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+scopeType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+scopeType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+fromDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+toDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+iterations	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+periodicity	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+periodicity.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+periodicity.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+creationDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+modificationDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+active	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+ 
