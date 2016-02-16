@@ -30,8 +30,8 @@
 * [notifications-v1](#notifications-v1)
     * [put-notifications](#put-notifications)
     * [get-notifications](#get-notifications)
-    * [get-notifications-configuration](#get-notifications-configuration)
     * [post-notifications-configuration](#post-notifications-configuration)
+    * [get-notifications-configuration](#get-notifications-configuration)   
     * [get-notifications-count](#get-notifications-count)
 
 
@@ -640,6 +640,86 @@ notifications.priority	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
 notifications.priority.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 notifications.priority.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 
-### get-notifications-configuration
 ### post-notifications-configuration
+
+Method: __POST__
+URI: __/notifications/configuration__ 
+
+* BODY :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+notifications | Required | - | - | - |
+notifications.product | Required | - | - | - |
+notifications.activate | Required | - | - | - |
+notifications.platform | Optional | - | - | - |
+notifications.platform.id | Optional | - | - | - |
+notifications.platform.name | Optional | - | - | - |
+notifications.priority | Optional | - | - | - |
+notifications.conditions | Optional | - | - | - |
+notifications.conditions.id | Optional | - | - | - |
+notifications.conditions.value | Optional | - | - | - |
+notifications.conditions.currency | Optional | - | - | - |
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+notifications	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+notifications.notificationId	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+
+### get-notifications-configuration
+
+
+Method: __GET__
+URI: __/notifications/configuration__ 
+
+* QUERY PARAMETERS:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+platform | Optional | - | - | - |
+product | Optional | - | - | - |
+type | Optional | - | - | - |
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+notificationsConfigurationId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.product	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.product.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.product.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.notificationType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.notificationType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.notificationType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+configurable	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+conditionable	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+platform	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+platform.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+platform.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+platform.active	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+priority	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+priority.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+priority.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+conditions	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+conditions.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+conditions.condition	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+conditions.value	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+conditions.currency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+
+
 ### get-notifications-count
+
+
+Method: __GET__
+URI: __/notifications/count__ 
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+notificationsNew	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notificationsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notificationsUnread	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
