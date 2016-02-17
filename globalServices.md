@@ -64,6 +64,27 @@
     * [post-accounts_id-checkbooks](#post-accounts_id-checkbooks)
     * [get-accounts_id-checkbooks](#get-accounts_id-checkbooks)
     * [get-accounts_id-transactions](#get-accounts_id-transactions)
+    
+* [security-v1](#security-v1)
+    * [post-token](#post-token)
+    * [get-authorize](#get-authorize)
+    * [post-reset](#post-reset)
+    
+* [cards-v1](#cards-v1)
+    * [get-cards](#get-cards)
+    * [get-cards-balances](#get-cards-balances)
+    * [delete-cards_id](#delete-cards_id)
+    * [patch-cards_id](#patch-cards_id)
+    * [get-cards_id](#get-cards_id)  
+    * [get-cards_id-activations](#get-cards_id-activations)   
+    * [put-cards_id-activations_id](#put-cards_id-activations_id)    
+    * [get-cards_id-blocks](#get-cards_id-blocks)    
+    * [put-cards_id-blocks_id](#put-cards_id-blocks_id)
+    * [put-cards_id-pin](#put-cards_id-pin)    
+    * [get-cards_id-holds](#get-cards_id-holds)
+    * [get-cards_id-securityData](#get-cards_id-securityData)
+    * [get-cards_id-transactions](#get-cards_id-transactions)
+
 
 ---------------
 ## users-V1
@@ -1708,3 +1729,619 @@ commentsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 
 ---------------
 ## security-v1
+
+### post-token
+
+Method: __POST__
+URI: __/token__ 
+
+* QUERY PARAMETERS :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+grant_type	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+scope	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
+code	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+third_party_user_id	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
+
+* REQUEST BODY :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+refresh_token	 | 	Required just for refresh_token	 | 	-	 | 	-	 | 	-	 |
+username	 | 	Required just for password	 | 	-	 | 	-	 | 	-	 |
+password	 | 	Required just for password	 | 	-	 | 	-	 | 	-	 |
+
+* REQUEST HEADERS :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+Authorization	 | 	Basic Authorization Header with client credentials using the following format: clientId:clientSecret enconded in Base64	 | 	-	 | 	-	 | 	-	 |
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+access_token	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+expires_in	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+refresh_token	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+refresh_expires_in	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+token_type	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+scope | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+
+### get-authorize
+
+Method: __GET__
+URI: __/authorize__ 
+
+* QUERY PARAMETERS :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+response_type	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+client_id	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+state	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
+scope	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+redirect_uri	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+* REDIRECT RESPONSE :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+code	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+state	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+error	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+### post-reset
+
+Method: __POST__
+URI: __/reset__ 
+
+__No defined in anypoint__
+
+---------------
+## cards-v1
+
+### get-cards
+
+Method: __GET__
+URI: __/cards__ 
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+cardId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+numberType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+numberType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+cardType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+cardType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+cardType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+alias	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+grantedCredit	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+grantedCredit.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+grantedCredit.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.currentBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.currentBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.currentBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.postedBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.postedBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.postedBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.pendingBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.pendingBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.pendingBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+disposedBalance	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+disposedBalance.currentBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+disposedBalance.currentBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+disposedBalance.currentBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+disposedBalance.postedBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+disposedBalance.postedBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+disposedBalance.postedBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+disposedBalance.pendingBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+disposedBalance.pendingBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+disposedBalance.pendingBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+image	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+image.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+image.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+image.url	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+### get-cards-balances
+
+Method: __GET__
+URI: __/cards/balances__ 
+
+* STATUS 200 Response fields
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+aggregateAvailableBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+aggregateAvailableBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+aggregateAvailableBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+aggregatePostedBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+aggregatePostedBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+
+### delete-cards_id
+
+Method: __DELETE__
+URI: __/cards/{cardId}__ 
+
+
+* URI PARAMETERS: documentId
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+cardId | Required | - | - | - |
+
+* STATUS 202 Response fields:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+cardId	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+number	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 |
+
+### patch-cards_id
+
+Method: __PATCH__
+URI: __/cards/{cardId}__ 
+
+
+* URI PARAMETERS:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+cardId | Required | - | - | - |
+
+* BODY:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+alias | Required | - | - | - |
+
+* STATUS 200 Response fields:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+cardId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+numberType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+numberType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+cardType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+cardType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+cardType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+brandAssociation	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+brandAssociation.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+brandAssociation.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+physicalSupport	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+physicalSupport.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+physicalSupport.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+bank	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+bank.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+bank.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+alias	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+openingDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+activationDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+expirationDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+holderName	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+code	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+image	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+image.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+image.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+image.url	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+paymentMethod	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+paymentMethod.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+paymentMethod.period	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+paymentMethod.period.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+paymentMethod.period.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.number	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.product	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.product.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.product.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.relationType	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.relationType.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.relationType.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+creditLimit	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+creditLimit.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+creditLimit.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+creditLimit.currentValue	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+creditLimit.currentValue.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+creditLimit.currentValue.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+creditLimit.availableLimit	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+creditLimit.availableLimit.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+creditLimit.availableLimit.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currencies	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currencies.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currencies.isMajor	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+postedBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+postedBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+postedBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesAvailableBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+unauthorizedBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+unauthorizedBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+unauthorizedBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesAvailableBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesAvailableBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesAvailableBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesPostedBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesPostedBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesPostedBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesUnauthorizedBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesUnauthorizedBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesUnauthorizedBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+### get-cards_id
+
+Method: __GET__
+URI: __/cards/{cardId}__ 
+
+
+* URI PARAMETERS:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+cardId | Required | - | - | - |
+
+* STATUS 200 Response fields:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+cardId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+numberType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+numberType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+cardType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+cardType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+cardType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+brandAssociation	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+brandAssociation.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+brandAssociation.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+physicalSupport	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+physicalSupport.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+physicalSupport.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+bank	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+bank.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+bank.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+alias	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+openingDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+activationDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+expirationDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+holderName	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+image	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+image.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+image.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+image.url	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+paymentMethod	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+paymentMethod.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+paymentMethod.period	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+paymentMethod.period.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+paymentMethod.period.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.number	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.product	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.product.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.product.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.relationType	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.relationType.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedContracts.relationType.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+availableBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.authorised	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.authorised.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.authorised.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.posted	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.posted.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.posted.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+disposedBalance	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+disposedBalance.authorised	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+disposedBalance.authorised.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+disposedBalance.authorised.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+disposedBalance.posted	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+disposedBalance.posted.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+disposedBalance.posted.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+unauthorizedBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+unauthorizedBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+unauthorizedBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+grantedCredit	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+grantedCredit.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+grantedCredit.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currencies	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currencies.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currencies.isMajor	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesAvailableBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesAvailableBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesAvailableBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesPostedBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesPostedBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesPostedBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesUnauthorizedBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesUnauthorizedBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+currenciesUnauthorizedBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+ 
+### get-cards_id-activations
+
+Method: __GET__
+URI: __/cards/{cardId}/activations__ 
+
+
+* URI PARAMETERS:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+cardId | Required | - | - | - |
+
+* STATUS 200 Response fields:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+activationId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+isActive	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+startDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+endDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+
+### put-cards_id-activations_id
+
+Method: __PUT__
+URI: __/cards/{cardId}/activations/{activationId}__ 
+
+
+* URI PARAMETERS:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+cardId | Required | - | - | - |
+activationId | Required | - | - | - |
+
+* BODY:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+limits | Required | - | - | - |
+limits.amount | Required | - | - | - |
+limits.currency | Required | - | - | - |
+
+* STATUS 200 Response fields:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+activationId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+activationDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+### get-cards_id-blocks
+
+Method: __GET__
+URI: __/cards/{cardId}/blocks__ 
+
+
+* URI PARAMETERS:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+cardId | Required | - | - | - |
+
+* STATUS 200 Response fields:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+blockId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+blockDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+### put-cards_id-blocks_id
+
+Method: __PUT__
+URI: __/cards/{cardId}/blocks/{blockId}__ 
+
+
+* URI PARAMETERS:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+cardId | Required | - | - | - |
+blockId | Required | - | - | - |
+
+* STATUS 200 Response fields:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+blockId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+blockDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+### put-cards_id-pin
+
+Method: __PUT__
+URI: __/cards/{cardId}/pin__ 
+
+
+* URI PARAMETERS:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+cardId | Required | - | - | - |
+
+* BODY:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+pin | Required | - | - | - |
+
+* STATUS 200 Response fields:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+pin	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+### get-cards_id-holds
+
+
+Method: __GET__
+URI: __/cards/{cardId}/holds__ 
+
+* URI PARAMETERS:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+cardId | Required | - | - | - |
+
+* STATUS 200 Response fields:
+
+__No defined in anypoint__
+
+### get-cards_id-securityData
+
+Method: __GET__
+URI: __/cards/{cardId}/securityData__ 
+
+
+* URI PARAMETERS:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+cardId | Required | - | - | - |
+
+* STATUS 200 Response fields:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+code	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+### get-cards_id-transactions
+
+Method: __GET__
+URI: __/cards/{cardId}/transactions__ 
+
+
+* URI PARAMETERS:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+cardId | Required | - | - | - |
+
+* QUERY PARAMETERS :
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+financingType	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fromAmount	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
+fromDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+moneyFlow	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+order	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+orderBy	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+tag	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+text	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+toAmount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+toDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+
+* STATUS 200 Response fields:
+
+Field | Required | Colombia | Chile | Mexico |
+-----------------|-----------------|-----------------|-----------------|-----------------|
+transactionId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+relatedContract	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+relatedContract.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+relatedContract.product	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+relatedContract.product.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+relatedContract.product.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+relatedContract.number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+amount.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+amount.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+postedDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+transactionTimestamp	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+concept	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+concept.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+concept.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+concept.image	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+concept.image.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+concept.image.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+concept.image.url	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+moneyFlow	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+moneyFlow.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+moneyFlow.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+financingType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+financingType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+financingType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+status.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+postedBalance	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+postedBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+postedBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+financingPayment	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+financingPayment.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+financingPayment.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+financingPayment.customizablePayment	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+financingPayment.customizablePayment.minimumTerm	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+financingPayment.customizablePayment.maximumTerm	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+financingPayment.customizablePayment.interestRate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+financingPayment.customizablePayment.minimumPayment	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+financingPayment.customizablePayment.currency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+financingPayment.customizedPayment	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+financingPayment.customizedPayment.terms	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+financingPayment.customizedPayment.currentTerm	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+financingPayment.customizedPayment.interestRate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+financingPayment.customizedPayment.repayment	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+financingPayment.customizedPayment.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+fraudReport	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fraudReport.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+fraudReport.status	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+fraudReport.status.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+fraudReport.status.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+fraudReport.reason	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+fraudReport.comments	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+relatedBill	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+relatedBill.billId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+activitySector	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+activitySector.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+activitySector.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+activitySector.image	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+activitySector.image.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+activitySector.image.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+activitySector.image.url	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+points	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+points.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+points.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+points.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+appliedPromotions	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+appliedPromotions.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+appliedPromotions.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+appliedPromotions.promotionType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+appliedPromotions.promotionType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+appliedPromotions.promotionType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+appliedPromotions.discount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+appliedPromotions.discount.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+appliedPromotions.discount.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+appliedPromotions.originAmount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+appliedPromotions.originAmount.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+appliedPromotions.originAmount.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+tags	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+attachmentsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+commentsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+
+
