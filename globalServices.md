@@ -288,7 +288,7 @@ financingPayment.customizablePayment.minimumPayment	 | 	Optional	 | 	-	 | 	-	 | 
 financingPayment.customizablePayment.currency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 financingPayment.customizedPayment	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 financingPayment.customizedPayment.terms	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
-financingPayment.customizedPayment.currentTerm	 | 	Required	 | 	Y	 | 	-	 | 	-	 | 
+financingPayment.customizedPayment.currentTerm	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 financingPayment.customizedPayment.interestRate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 financingPayment.customizedPayment.repayment	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 financingPayment.customizedPayment.currency	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
@@ -2245,33 +2245,33 @@ Field | Required | Colombia | Chile | Mexico |
 -----------------|-----------------|-----------------|-----------------|-----------------|
 financingType	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 fromAmount	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
-fromDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fromDate	 | 	Optional	 | 	-	 | 	Y	 | 	-	 | 
 moneyFlow	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 order	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 orderBy	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 tag	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 text	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 toAmount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
-toDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+toDate	 | 	Optional	 | 	-	 | 	Y	 | 	-	 | 
 
 * STATUS 200 Response fields:
 
 Field | Required | Colombia | Chile | Mexico |
 -----------------|-----------------|-----------------|-----------------|-----------------|
-transactionId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+transactionId	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 relatedContract	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 relatedContract.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 relatedContract.product	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 relatedContract.product.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 relatedContract.product.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 relatedContract.number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-amount.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-amount.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-postedDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+amount	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
+amount.amount	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
+amount.currency	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
+postedDate	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 availableDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 transactionTimestamp	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
-name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+name	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 concept	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 concept.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 concept.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
@@ -2283,7 +2283,7 @@ moneyFlow	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
 moneyFlow.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 moneyFlow.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 financingType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-financingType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+financingType.id	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 financingType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 status	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 status.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
