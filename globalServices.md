@@ -1307,23 +1307,23 @@ Order by	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
 Field | Required | Colombia | Chile | Mexico |
 -----------------|-----------------|-----------------|-----------------|-----------------|
 accountId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+number	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 numberType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 numberType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 accountType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-accountType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-accountType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+accountType.id	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
+accountType.name	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 title	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 title.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 title.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-alias	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+alias	 | 	Optional	 | 	-	 | 	Y	 | 	-	 | 
 availableBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-availableBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-availableBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.amount	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
+availableBalance.currency	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 postedBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-postedBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-postedBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+postedBalance.amount	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
+postedBalance.currency	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 status	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 status.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 status.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
@@ -1388,7 +1388,7 @@ accountId	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
 Field | Required | Colombia | Chile | Mexico |
 -----------------|-----------------|-----------------|-----------------|-----------------|
 accountId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+number	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 numberType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 numberType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
@@ -1398,15 +1398,15 @@ formats.numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 formats.numberType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 formats.numberType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 accountType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-accountType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-accountType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+accountType.id	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
+accountType.name	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 title	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 title.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 title.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 bank	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 bank.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 bank.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-alias	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+alias	 | 	Optional	 | 	-	 | 	Y	 | 	-	 | 
 address	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 address.streetAddress	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 address.city	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
@@ -1414,7 +1414,7 @@ address.region	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 address.country	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 address.zipCode	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 address.alias	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
-openingDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+openingDate	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 status	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 status.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 status.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
@@ -1435,11 +1435,11 @@ currencies	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 currencies.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 currencies.isMajor	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 availableBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-availableBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-availableBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.amount	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
+availableBalance.currency	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 postedBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-postedBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-postedBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+postedBalance.amount	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
+postedBalance.currency	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 currenciesAvailableBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 currenciesAvailableBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 currenciesAvailableBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
@@ -1632,7 +1632,7 @@ accountId	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
 Field | Required | Colombia | Chile | Mexico |
 -----------------|-----------------|-----------------|-----------------|-----------------|
 accountId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+number	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 numberType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 numberType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
@@ -1646,7 +1646,7 @@ checkbooks.format.id	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 checkbooks.format.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 checkbooks.requestDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 checkbooks.deliveryDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-checkbooks.status	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+checkbooks.status	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 checkbooks.status.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 checkbooks.status.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 checkbooks.firstCheckId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
@@ -1814,21 +1814,21 @@ URI: __/cards__
 Field | Required | Colombia | Chile | Mexico |
 -----------------|-----------------|-----------------|-----------------|-----------------|
 cardId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+number	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 numberType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 numberType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 cardType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-cardType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-cardType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+cardType.id	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
+cardType.name	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 alias	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 grantedCredit	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 grantedCredit.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 grantedCredit.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 availableBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 availableBalance.currentBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-availableBalance.currentBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-availableBalance.currentBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+availableBalance.currentBalance.amount	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
+availableBalance.currentBalance.currency	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 availableBalance.postedBalance	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 availableBalance.postedBalance.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 availableBalance.postedBalance.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
@@ -1996,7 +1996,7 @@ URI: __/cards/{cardId}__
 
 Field | Required | Colombia | Chile | Mexico |
 -----------------|-----------------|-----------------|-----------------|-----------------|
-cardId | Required | - | - | - |
+cardId | Required | - | N | - |
 
 * STATUS 200 Response fields:
 
@@ -2219,13 +2219,13 @@ URI: __/cards/{cardId}/securityData__
 
 Field | Required | Colombia | Chile | Mexico |
 -----------------|-----------------|-----------------|-----------------|-----------------|
-cardId | Required | - | - | - |
+cardId | Required | - | N | - |
 
 * STATUS 200 Response fields:
 
 Field | Required | Colombia | Chile | Mexico |
 -----------------|-----------------|-----------------|-----------------|-----------------|
-code	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+code	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 
 ### get-cards_id-transactions
 
@@ -2346,4 +2346,21 @@ attachmentsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 commentsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 
 ## observations
+<<<<<<< HEAD
+
+###Information not available
+cards-holds
+cards-pin
+cards-limits
+cards-cancellation
+cards-blocks
+cards-activation
+
+cards  
+   card.expirationDate ???
+   card.creditLimit.availableLimit.amount
+"card.creditLimit.availableLimit.currency   "
+accounts-transactions
+
 * En __/products__ Chile no sabe que es consumers y links por lo que todos los campos con referencia a los campos relacionados vienen con interrogacion
+
