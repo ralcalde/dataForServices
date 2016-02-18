@@ -85,6 +85,7 @@
     * [get-cards_id-securityData](#get-cards_id-securityData)
     * [get-cards_id-transactions](#get-cards_id-transactions)
 
+* [observations](#observations)
 
 ---------------
 ## users-V1
@@ -2344,4 +2345,5 @@ tags	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 attachmentsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 commentsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 
+## observations
 
