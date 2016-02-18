@@ -821,15 +821,15 @@ URI: __/wireTransfers__
 Field | Required | Colombia | Chile | Mexico |
 -----------------|-----------------|-----------------|-----------------|-----------------|
 originAccount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-originAccount.accountId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAccount.accountId	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 destinationAccount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-destinationAccount.number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.number	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 destinationAccount.numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 destinationAccount.accountType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 destinationAccount.bank	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 sentMoney	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
-sentMoney.amount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
-sentMoney.currency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+sentMoney.amount	 | 	Optional	 | 	-	 | 	Y	 | 	-	 | 
+sentMoney.currency	 | 	Optional	 | 	-	 | 	Y	 | 	-	 | 
 receivedMoney	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 receivedMoney.amount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 receivedMoney.currency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
@@ -858,7 +858,7 @@ isSimulated	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 
 Field | Required | Colombia | Chile | Mexico |
 -----------------|-----------------|-----------------|-----------------|-----------------|
-wireTransferId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+wireTransferId	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 approxReceptionTransferDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 fees	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 fees.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
@@ -1181,28 +1181,28 @@ URI: __/wireTransfers/schedules__
 Field | Required | Colombia | Chile | Mexico |
 -----------------|-----------------|-----------------|-----------------|-----------------|
 originAccount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-originAccount.accountId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-destinationAccount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-destinationAccount.number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAccount.accountId	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
+destinationAccount	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
+destinationAccount.number	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 destinationAccount.numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 schedules.destinationAccount.accountType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 destinationAccount.bank	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
-sentMoney	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-sentMoney.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-sentMoney.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+sentMoney	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
+sentMoney.amount	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
+sentMoney.currency	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 receivedMoney	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 receivedMoney.amount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 receivedMoney.currency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 transferee	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-transferee.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+transferee.name	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 transferee.identityDocument	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 transferee.identityDocument.number	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 transferee.identityDocument.documentType	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 scopeType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-toDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
-iterations	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
-periodicity	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+toDate	 | 	Optional	 | 	-	 | 	Y	 | 	-	 | 
+iterations	 | 	Optional	 | 	-	 | 	Y	 | 	-	 | 
+periodicity	 | 	Optional	 | 	-	 | 	Y	 | 	-	 | 
 active	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 
 
@@ -1229,7 +1229,7 @@ destinationAccountNumberFormat	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
 fromAmount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 fromCurrency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 fromDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
-originAccount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+originAccount	 | 	Optional	 | 	-	 | 	Y	 | 	-	 | 
 scopeTypeTransfer	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 toAmount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 toCurrency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
@@ -1242,13 +1242,13 @@ Field | Required | Colombia | Chile | Mexico |
 scheduleId	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 originAccount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 originAccount.accountId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-originAccount.number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAccount.number	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 originAccount.alias	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 originAccount.numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 originAccount.numberType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 originAccount.numberType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 destinationAccount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-destinationAccount.number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.number	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 destinationAccount.numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 destinationAccount.numberType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 destinationAccount.numberType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
@@ -1258,15 +1258,15 @@ destinationAccount.bank.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
 destinationAccount.accountType	 | 	Type of account.	 | 	-	 | 	-	 | 	-	 | 
 destinationAccount.accountType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 destinationAccount.accountType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-sentMoney	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-sentMoney.amount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-sentMoney.currency	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+sentMoney	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
+sentMoney.amount	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
+sentMoney.currency	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 sentMoney.isMajor	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 receivedMoney	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 receivedMoney.amount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 receivedMoney.currency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 transferee	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-transferee.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+transferee.name	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 transferee.identityDocument	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 transferee.identityDocument.number	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 transferee.identityDocument.documentType	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
@@ -1276,14 +1276,14 @@ name	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
 scopeType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 scopeType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 scopeType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-fromDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-toDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
-iterations	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
-periodicity	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+fromDate	 | 	Required	 | 	-	 | Y	 | 	-	 | 
+toDate	 | 	Optional	 | 	-	 | 	Y	 | 	-	 | 
+iterations	 | 	Optional	 | 	-	 | 	Y	 | 	-	 | 
+periodicity	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 periodicity.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 periodicity.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 creationDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-modificationDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+modificationDate	 | 	Optional	 | 	-	 | 	Y	 | 	-	 | 
 active	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 
 ---------------
