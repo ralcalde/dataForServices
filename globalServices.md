@@ -667,21 +667,21 @@ Field | Required | Colombia | Chile | Mexico |
 -----------------|-----------------|-----------------|-----------------|-----------------|
 notificationsNew	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 notificationsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-notifications	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-notifications.notificationId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
+notifications.notificationId	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 notifications.product	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 notifications.product.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 notifications.product.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-notifications.notificationType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.notificationType	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 notifications.notificationType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 notifications.notificationType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 notifications.platform	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-notifications.platform.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.platform.id	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 notifications.platform.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-notifications.creationDate	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.creationDate	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 notifications.modificationDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
-notifications.isUnread	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-notifications.description	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notifications.isUnread	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
+notifications.description	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 notifications.parameters	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 notifications.parameters.key	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 notifications.parameters.value	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
@@ -772,8 +772,8 @@ URI: __/notifications/count__
 Field | Required | Colombia | Chile | Mexico |
 -----------------|-----------------|-----------------|-----------------|-----------------|
 notificationsNew	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-notificationsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-notificationsUnread	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+notificationsCount	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
+notificationsUnread	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 
 ---------------
 
@@ -792,17 +792,17 @@ consumers	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 consumers.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 consumers.productsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 products	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-products.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+products.id	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 products.product	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-products.product.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-products.product.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+products.product.id	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
+products.product.name	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 products.type	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-products.type.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-products.type.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+products.type.id	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
+products.type.name	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 products.title	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 products.title.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 products.title.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-products.description	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+products.description	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 products.consumers	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 products.consumers.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 products.consumers.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
@@ -883,14 +883,14 @@ destinationAccountNumber	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
 destinationAccountNumberFormat	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 fromAmount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 fromCurrency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
-fromDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+fromDate	 | 	Optional	 | 	-	 | 	Y	 | 	-	 | 
 name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
-originAccount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+originAccount	 | 	Optional	 | 	-	 | 	Y	 | 	-	 | 
 scopeTypeTransfer	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
 state	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 toAmount	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
 toCurrency | 	Optional	 | 	-	 | 	-	 | 	-	 |
-toDate	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+toDate	 | 	Optional	 | 	-	 | 	Y	 | 	-	 | 
 transferee	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
 
 
@@ -901,12 +901,12 @@ Field | Required | Colombia | Chile | Mexico |
 wireTransferId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 originAccount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 originAccount.accountId	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-originAccount.number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+originAccount.number	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 originAccount.numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 originAccount.numberType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 originAccount.numberType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 destinationAccount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
-destinationAccount.number	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+destinationAccount.number	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 destinationAccount.numberType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 destinationAccount.numberType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 destinationAccount.numberType.name	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
@@ -917,12 +917,12 @@ destinationAccount.bank	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
 destinationAccount.bank.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 destinationAccount.bank.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 sentMoney	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
-sentMoney.amount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
-sentMoney.currency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+sentMoney.amount	 | 	Optional	 | 	-	 | 	Y	 | 	-	 | 
+sentMoney.currency	 | 	Optional	 | 	-	 | 	Y	 | 	-	 | 
 sentMoney.isMajor	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 receivedMoney	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
-receivedMoney.amount	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
-receivedMoney.currency	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
+receivedMoney.amount	 | 	Optional	 | 	-	 | 	Y	 | 	-	 | 
+receivedMoney.currency	 | 	Optional	 | 	-	 | 	Y	 | 	-	 | 
 fees	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 fees.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 fees.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
@@ -940,7 +940,7 @@ transferee.identityDocument.number	 | 	Optional	 | 	-	 | 	-	 | 	-	 |
 transferee.identityDocument.documentType	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 transferee.identityDocument.documentType.id	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 transferee.identityDocument.documentType.name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
-date	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
+date	 | 	Required	 | 	-	 | 	Y	 | 	-	 | 
 name	 | 	Optional	 | 	-	 | 	-	 | 	-	 | 
 scopeType	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 scopeType.id	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
@@ -2346,4 +2346,4 @@ attachmentsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 commentsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 
 ## observations
-
+* En __/products__ Chile no sabe que es consumers y links por lo que todos los campos con referencia a los campos relacionados vienen con interrogacion
