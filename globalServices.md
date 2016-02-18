@@ -2346,7 +2346,6 @@ attachmentsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 |
 commentsCount	 | 	Required	 | 	-	 | 	-	 | 	-	 | 
 
 ## observations
-<<<<<<< HEAD
 
 ###Information not available
 cards-holds
